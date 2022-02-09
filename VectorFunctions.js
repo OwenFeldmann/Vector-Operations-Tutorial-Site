@@ -15,7 +15,7 @@
  */
 function VectorAddition(v1, v2)
 {
-	var result = new float[3];
+	var result = new [null, null, null];
 	for(var i = 0; i < 3; i++)
 	{
 		result[i] = v1[i] + v2[i];
@@ -43,7 +43,7 @@ function VectorSubraction(v1, v2)
  */
 function ScalarVectorMultiplication(s, v)
 {
-	var result = new float[3];
+	var result = [null, null, null];
 	for(var i = 0; i < 3; i++)
 	{
 		result[i] = v[i] * s;
@@ -65,7 +65,7 @@ function CrossProduct(v1, v2)
 	 * |	j	v1[1]	v2[1]	|
 	 * |	k	v1[2]	v2[2]	|
 	 */
-	var result = new float[3];
+	var result = [null, null, null];
 	result[0] = (v1[1] * v2[2]) - (v1[2] * v2[1]);
 	result[1] = (v1[2] * v2[0]) - (v2[2] * v1[0]);
 	result[2] = (v1[0] * v2[1]) - (v2[0] * v1[1]);
@@ -108,7 +108,7 @@ function Magnitude(v)
 function Normalize(v)
 {
 	var magnitude = Magnitude(v);
-	var result = new float[3];
+	var result = [null, null, null];
 	for(var i = 0; i < 3; i++)
 	{
 		result[i] = v[i] / magnitude;
@@ -125,7 +125,7 @@ function Normalize(v)
  */
 function PointPointSubtraction(p1, p2)
 {
-	var result = new float[3];
+	var result = [null, null, null];
 	for(var i = 0; i < 3; i++)
 	{
 		result[i] = p2[i] - p1[i];

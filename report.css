@@ -1,0 +1,44 @@
+/* 
+    Created on : Jan 6, 2018, 12:29:18 PM
+    Author     : Marietta E. Cameron
+	Modified by: Owen Feldmann
+	Modified on: Feb 8, 2022
+*/
+
+canvas {
+    border:#0000FF 1px solid;
+} 
+h1 {
+    color: #0000FF;
+    text-shadow: 2px 2px 3px grey;
+}/* h1 */
+h2 {
+    color: #0000FF;
+}/* h2 */
+h3 {
+    color: #ae00ff;   
+}/* h3 */
+p {
+    font-family: verdana;
+    font-size: 20px;
+}/* p */
+pre {
+	font-size: 24px;
+}/* pre */
+
+.interactiveTutorialClass {
+    float: left;
+    width: 45%;
+}/* interactiveTutorialClass */
+
+.tutorialDescriptionClass {
+    float: left;
+    width: 55%;
+}/* tutorialDescriptionClass */
+
+/* Responsive layout - if width is less than 1000px send objective class full width*/
+@media (max-width: 1000px) {
+    .tutorialDescriptionClass{
+        width: 100%;
+    }
+}
