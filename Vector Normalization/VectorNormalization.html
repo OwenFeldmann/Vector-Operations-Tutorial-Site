@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+Author: Owen Feldmann 
+Last Modified: 2-12-2022
+Assignment 2: Vector Operations Tutorial Site: Vector Normalization Tutorial
+-->
+<html>
+    <head>
+        <title>Assignment 2: Vector Operations</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="../report.css">
+        <script src="../VectorFunctions.js"></script>
+		<script src="VectorNormalization.js"></script>
+    </head>
+	
+	<body onload="setup()">
+		
+		<div class="interactiveTutorialClass">
+			<h1>Assignment 2: Vector Operations Tutorial: Vector Normalization</h1>
+			<a href="../index.html">Back to homepage</a>
+			<figure>
+				<canvas id="canvas" width ="500" height="500" onclick="clickCanvas(event)">
+					You are not seeing a canvas image.  Please use a browser that supports the tag, "canvas".
+				</canvas>
+				<figcaption><b>Figure1.</b> Vector Normalization Tutorial<br>
+					<b>Project 2:</b>  Vector Operations Tutorial Site <br>
+					<b>By:</b>  Owen Feldmann <a href="mailto:ofeldman@unca.edu" target="_top">ofeldman@unca.edu</a> <br>
+					<b>Last Modification Date:</b>  Febuary 12, 2022 <br>
+				</figcaption>
+			</figure>
+		</div>
+		
+		<div class="tutorialDescriptionClass">
+			<br><br><br>
+			<h2>Vector Normalization</h2>
+			<p>
+				A vector <b>v</b> consists of a length or magnitude and a direction. A normalized vector for <b>v</b> has a length of 1, but the same direction as <b>v</b>.
+				This can be calculated by dividing a vector by its magnitude.
+			</p>
+			<pre>	<b>v</b> / |<b>v</b>| = [<b>v</b><sub>1</sub> / |<b>v</b>| , <b>v</b><sub>2</sub> / |<b>v</b>| , ... , <b>v</b><sub>n</sub> / |<b>v</b>|]</pre> 
+			<p>
+				An easy way to calculate the magnitude of a vector is to take the square root of the dot product with itself.
+			</p>
+			<pre>	|<b>v</b>| = root(<b>v</b>&bull;<v>b</v>)</pre>
+			
+			<br>
+			<h2>Tutorial Use</h2>
+			<p>
+				On the canvas on the left, define your vector by clicking the starting point, and then the ending point. 
+				The values of the vector, its magnitude, and its normalized form will be displayed once the vector is define. 
+				Clicking again will clear the canvas and define the starting point of a new vector.
+			</p>
+			
+			
+			
+		</div>
+		
+	</body>
+</html>
