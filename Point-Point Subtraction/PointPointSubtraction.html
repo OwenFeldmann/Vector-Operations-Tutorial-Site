@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+Author: Owen Feldmann 
+Last Modified: 2-12-2022
+Assignment 2: Vector Operations Tutorial Site: Point-Point Subtraction Tutorial
+-->
+<html>
+    <head>
+        <title>Assignment 2: Vector Operations</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="../report.css">
+        <script src="../VectorFunctions.js"></script>
+		<script src="PointPointSubtraction.js"></script>
+    </head>
+	
+	<body onload="setup()">
+		
+		<div class="interactiveTutorialClass">
+			<h1>Assignment 2: Vector Operations Tutorial: Point-Point Subtraction</h1>
+			<a href="../index.html">Back to homepage</a>
+			<figure>
+				<canvas id="canvas" width ="500" height="500" onclick="clickCanvas(event)">
+					You are not seeing a canvas image.  Please use a browser that supports the tag, "canvas".
+				</canvas>
+				<figcaption><b>Figure1.</b> Point-Point Subtraction Tutorial<br>
+					<b>Project 2:</b>  Vector Operations Tutorial Site <br>
+					<b>By:</b>  Owen Feldmann <a href="mailto:ofeldman@unca.edu" target="_top">ofeldman@unca.edu</a> <br>
+					<b>Last Modification Date:</b>  Febuary 12, 2022 <br>
+				</figcaption>
+			</figure>
+		</div>
+		
+		<div class="tutorialDescriptionClass">
+			<br><br><br>
+			<h2>Point-Point Subtraction</h2>
+			<p>
+				A vector <b>v</b> can be calculated by subtracting a start point <u>P</u> from an end point <u>Q</u>.
+			</p>
+			<pre>	<b>v</b> = <u>Q</u>-<u>P</u> = [<u>Q</u><sub>1</sub>-<u>P</u><sub>1</sub>, <u>Q</u><sub>2</sub>-<u>P</u><sub>2</sub>, ... , <u>Q</u><sub>n</sub>-<u>P</u><sub>n</sub>]</pre> 
+			<p>
+				The terms in this equation can be worked with to show that a vector can be added to a start point to result in an end point.
+			</p>
+			<pre>	<u>Q</u> = <u>P</u> + <b>v</b></pre>
+			
+			<br>
+			<h2>Tutorial Use</h2>
+			<p>
+				On the canvas on the left, click a position to define a start point. 
+				Then click to define an end point.
+				A vector will be drawn and information on the points and vectors will be displayed.
+				Clicking a third time will reset the tutorial and define the position of a new start point.
+			</p>
+			
+			
+			
+		</div>
+		
+	</body>
+</html>
