@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+Author: Gabe Webb
+Last Modified: 2-11-2022
+Assignment 2: Vector Operations Tutorial Site: Cross Product Tutorial
+-->
+<html>
+    <head>
+        <title>Assignment 2: Vector Operations</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="../report.css">
+        <script src="../VectorFunctions.js"></script>
+		<script src="CrossProductTutorial.js"></script>
+    </head>
+	
+	<body onload="setup()">
+		
+		<div class="interactiveTutorialClass">
+			<h1>Assignment 2: Vector Operations Tutorial: Cross Product</h1>
+			<a href="../index.html">Back to homepage</a>
+			<figure>
+				<canvas id="canvas" width ="500" height="500" onclick="clickCanvas(event)">
+					You are not seeing a canvas image.  Please use a browser that supports the tag, "canvas".
+				</canvas>
+				<figcaption><b>Figure1.</b> Cross Product Tutorial<br>
+					<b>Project 2:</b>  Vector Operations Tutorial Site <br>
+					<b>By:</b>  Gabe Webb <a href="mailto:gwebb@unca.edu" target="_top">gwebb@unca.edu</a> <br>
+					<b>Last Modification Date:</b>  Febuary 11, 2022 <br>
+				</figcaption>
+			</figure>
+		</div>
+		
+		<div class="tutorialDescriptionClass">
+			<br><br><br>
+			<h2>Cross Product</h2>
+			<p>
+				The cross Product of two vectors <b>v</b> and <b>u</b> can be found by multiplying and subtracting a specific sequence of vector  elements.
+				To determine the direction of the new vector we can utilize the Right Hand Rule.
+				<br>
+
+			</p>
+			<pre>	<b>v</b>×<b>u</b> = ((<b>v</b><sub>2</sub>*<b>u</b><sub>3</sub>) - (<b>v</b><sub>3</sub>*<b>u</b><sub>2</sub>), (<b>v</b><sub>3</sub>*<b>u</b><sub>1</sub>) - (<b>v</b><sub>1</sub>*<b>u</b><sub>3</sub>),(<b>v</b><sub>1</sub>*<b>u</b><sub>2</sub>) - (<b>v</b><sub>2</sub>*<b>u</b><sub>1</sub>))
+			</pre>
+			<div style="text-align: center;"><img src="../imgs/right-hand-rule.jpg" alt ="Right Hand Rule (source: mathisfun.com)" ></div>
+			<p>
+				An alternative method to find cross Product is the multiply the magnitudes of both vectors, the sine of the angle between the vectors, and n which is the unit vector that is at a right angle to both vectors.
+			</p>
+			<pre>	<b>v</b>×<b>u</b> = |<b>v</b>||<b>u</b>|sin(&theta;)n.</pre>
+			<p>
+				This leads to the fact that <b>v</b>&bull;<b>u</b> = 0 iff <b>v</b> and <b>u</b> are orthogonal. Note that the zero vector <b>0</b> is orthogonal to every vector.
+				Since the vector components are readily available, this site uses the first method to calculate the cross Product.
+			</p>
+			
+			<br>
+			<h2>Tutorial Use</h2>
+			<p>
+				On the canvas on the left, define your vectors by clicking the starting point, and the the ending point for each vector. 
+				After both vectors are defined, clicking again will clear the vectors and define the starting point of the new first vector.
+				The values of the vectors and cross Product are displayed in the canvas once both vectors are defined.
+			</p>
+			
+			
+			
+		</div>
+		
+	</body>
+</html>

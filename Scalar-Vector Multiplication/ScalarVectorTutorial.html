@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+Author: Gabe Webb
+Last Modified: 2-11-2022
+Assignment 2: Vector Operations Tutorial Site: Dot Product Tutorial
+-->
+<html>
+    <head>
+        <title>Assignment 2: Vector Operations</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="../report.css">
+        <script src="../VectorFunctions.js"></script>
+		<script src="ScalarVectorTutorial.js"></script>
+    </head>
+	
+	<body onload="setup()">
+		
+		<div class="interactiveTutorialClass">
+			<h1>Assignment 2: Vector Operations Tutorial: Scalar Vector Multiplication</h1>
+			<a href="../index.html">Back to homepage</a>
+			<figure>
+				<canvas id="canvas" width ="500" height="500" onclick="clickCanvas(event)">
+					You are not seeing a canvas image.  Please use a browser that supports the tag, "canvas".
+				</canvas>
+				<figcaption><b>Figure1.</b> Vector Addition Tutorial<br>
+					<b>Project 2:</b>  Vector Operations Tutorial Site <br>
+					<b>By:</b>  Gabe Webb <a href="mailto:gwebb@unca.edu" target="_top">gwebb@unca.edu</a> <br>
+					<b>Last Modification Date:</b>  Febuary 11, 2022 <br>
+				</figcaption>
+			</figure>
+		</div>
+		
+		<div class="tutorialDescriptionClass">
+			<br><br><br>
+			<h2>Scalar Vector Multiplication</h2>
+			<p>
+				The scalar multiplication of a vector <b>v</b> by a scalar <b>K</b> can be found by multiplying all vector elements by the scalar factor.
+			</p>
+			<pre>	<b>v&bull;K</b> = <b>v</b><sub>1</sub>*<b>K</b> + <b>v</b><sub>2</sub>*<b>K</b> + ... + <b>v</b><sub>n</sub>*<b>K</b></pre>
+
+			
+			<br>
+			<h2>Tutorial Use</h2>
+			<p>
+				Note: A random scalar between 1.0 and 2.0 is chosen for each vector drawn.
+				<br><br>
+				On the canvas on the left, define your vectors by clicking the starting point, and the the ending point for each vector. 
+				After both vectors are defined, clicking again will clear the vectors and define the starting point of the new first vector.
+				The values of the vectors and the result of the scalar multiplication operation are displayed in the canvas once both vectors are defined.
+				If you cannot see the second scaled vector, please draw your original vector in the bottom left quadrant.
+			</p>
+			
+			
+			
+		</div>
+		
+	</body>
+</html>
