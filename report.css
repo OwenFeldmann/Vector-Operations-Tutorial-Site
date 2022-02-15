@@ -4,7 +4,15 @@
 	Modified by: Owen Feldmann
 	Modified on: Feb 8, 2022
 */
+.backgroundGradient{
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 85%, rgb(117, 233, 199) 100% );
+}
 
+html, body{
+    min-height: 100%;
+    margin-left:20px;
+}
 canvas {
     border:#0000FF 1px solid;
 } 
@@ -25,6 +33,29 @@ p {
 pre {
 	font-size: 24px;
 }/* pre */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 250px;
+    background-color: #f1f1f1;
+}
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+li a:hover {
+    background-color: #335e34;
+    color: white;
+}
+
+.summary{
+    max-width: 800px;
+    min-width: 100px;
+}
 
 .interactiveTutorialClass {
     float: left;
