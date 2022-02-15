@@ -2,7 +2,7 @@
  * @author Gabe Webb <gwebb@unca.edu>
  * @author Owen Feldmann <ofeldman@unca.edu>
  * Assignment 2: Vector Operations Tutorial Site: Vector Subtraction Page
- * Last Modified: 2/11/2022
+ * Last Modified: 2/15/2022
  */
 
 var canvas;
@@ -15,7 +15,7 @@ var canvasHeight;
  * points[1] is the end point of the first vector.
  * points[2] and points[3] coorespond to the second vector.
  */
-var points = [null, null, null, null];
+var points = [null, null, null];
 /**
  * points[0][x] gives the x coordinate of the first point
  */
@@ -76,7 +76,7 @@ function clickCanvas(event)
 		var pointSize = 5;//bigger point size used like an arrow cap
 		
 		//draw a vector for every second point
-		if(i % 2 == 1)
+		if(i == 1 || i == 2)
 		{
 			pointSize = 15;
 			canvasContext.lineWidth = 5;
@@ -90,7 +90,7 @@ function clickCanvas(event)
 		
 			canvasContext.fillStyle = 'rgba(0,0,255,1.0)';//blue
 			canvasContext.font = '15px Arial';
-			var vectorName = ((i==3) ? "u" : "v");
+			var vectorName = ((i==2) ? "u" : "v");
 			canvasContext.fillText(vectorName, canvasX + pointSize, canvasY + pointSize);
 		}
 		
@@ -99,14 +99,51 @@ function clickCanvas(event)
 		
 		break;
 	}
-	
+
+	if(points[2] != null){
+
+		pointSize = 15;
+		canvasContext.lineWidth = 3;
+		canvasContext.strokeStyle = 'rgb(255,55,0)';//orange
+		canvasContext.font = '15px Arial';
+		canvasContext.fillStyle = 'rgb(255,55,0)';//orange
+
+		// draw -u vector
+		canvasContext.beginPath();
+		canvasContext.moveTo(points[1][x], 500 - points[1][y]);
+
+		var r =  PointPointSubtraction(points[1],points[2]);
+		var negZ = ScalarVectorMultiplication(-1.0,r);
+
+		canvasContext.lineTo(points[1][x]+negZ[x], 500 - (points[1][y]+negZ[y]));
+		canvasContext.stroke();
+		canvasContext.closePath();
+
+		canvasContext.fillText("-u", (points[1][x]+negZ[x]) + pointSize+15, 500 - (points[1][y]+negZ[y]) + pointSize);
+		canvasContext.fillRect((points[1][x]+negZ[x]) - pointSize/2, 500 - (points[1][y]+negZ[y]) - pointSize/2, pointSize, pointSize);
+
+
+		pointSize = 8;
+		canvasContext.strokeStyle ='rgb(156,17,255)';//purple
+		canvasContext.fillStyle = 'rgb(156,17,255)';//purple
+		// draw v-u vector
+		canvasContext.beginPath();
+		canvasContext.moveTo(points[1][x]+negZ[x], 500 - (points[1][y]+negZ[y]));
+		canvasContext.lineTo(points[0][x], 500 - (points[0][y]));
+		canvasContext.stroke();
+		canvasContext.closePath();
+
+		canvasContext.fillText("v-u", (points[1][x]+negZ[x]) + pointSize-45, 500 - (points[1][y]+negZ[y]) + pointSize);
+		canvasContext.fillRect((points[1][x]+negZ[x]) - pointSize/2, 500 - (points[1][y]+negZ[y]) - pointSize/2, pointSize, pointSize);
+
+	}
 	//console.log(points);
 	
 	//if all points are placed, draw vector information.
 	if(points[points.length-1] != null)
 	{
 		var v = PointPointSubtraction(points[0],points[1]);
-		var u = PointPointSubtraction(points[2],points[3]);
+		var u = PointPointSubtraction(points[1],points[2]);
 		var vecSubtraction = VectorSubraction(v, u);
 		var text = "v = ["+v[x]+", "+v[y]+", "+v[z]+"], u = ["+u[x]+", "+u[y]+", "+u[z]+"], v-u = [ " +vecSubtraction[0]+
 			", " +vecSubtraction[1]+ ", "+vecSubtraction[2]+ "]";

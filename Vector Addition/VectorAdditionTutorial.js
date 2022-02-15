@@ -15,7 +15,7 @@ var canvasHeight;
  * points[1] is the end point of the first vector.
  * points[2] and points[3] coorespond to the second vector.
  */
-var points = [null, null, null, null];
+var points = [null, null, null];
 /**
  * points[0][x] gives the x coordinate of the first point
  */
@@ -68,15 +68,16 @@ function clickCanvas(event)
 	}
 	
 	//store coords as next point
-	for(var i = 0; i < points.length; i++)
+	for(var i = 0; i < points.length; i++) // length is now 3
 	{
 		if(points[i] != null) continue;//skip to first empty point
 		
 		points[i] = [coorX, coorY, 0];
 		var pointSize = 5;//bigger point size used like an arrow cap
 		
-		//draw a vector for every second point
-		if(i % 2 == 1)
+		//draw a vector for every second point and
+		// if(i % 2 == 1 || i == 2)
+		if(i == 1 || i == 2)
 		{
 			pointSize = 15;
 			canvasContext.lineWidth = 5;
@@ -90,7 +91,8 @@ function clickCanvas(event)
 		
 			canvasContext.fillStyle = 'rgba(0,0,255,1.0)';//blue
 			canvasContext.font = '15px Arial';
-			var vectorName = ((i==3) ? "u" : "v");
+
+			var vectorName = ((i==2) ? "u" : "v");
 			canvasContext.fillText(vectorName, canvasX + pointSize, canvasY + pointSize);
 		}
 		
@@ -99,14 +101,32 @@ function clickCanvas(event)
 		
 		break;
 	}
-	
+
+	if(points[2] != null){
+
+		pointSize = 15;
+		canvasContext.lineWidth = 3;
+		canvasContext.strokeStyle = 'rgb(255,55,0)';//orange
+
+		canvasContext.beginPath();
+		canvasContext.moveTo(points[0][x], 500 - points[0][y]);
+		canvasContext.lineTo(points[2][x], 500 - points[2][y]);
+		canvasContext.stroke();
+		canvasContext.closePath();
+
+		canvasContext.fillStyle = 'rgb(255,55,0)';//orange
+		canvasContext.font = '15px Arial';
+		canvasContext.fillText("v+u", points[2][x] + pointSize+15, 500 - points[2][y] + pointSize);
+
+		canvasContext.fillRect(points[2][x] - pointSize/2, 500 - points[2][y] - pointSize/2, pointSize, pointSize);
+	}
 	//console.log(points);
 
 	//if all points are placed, draw vector information.
 	if(points[points.length-1] != null)
 	{
 		var v = PointPointSubtraction(points[0],points[1]);
-		var u = PointPointSubtraction(points[2],points[3]);
+		var u = PointPointSubtraction(points[1],points[2]);
 		var vecAddition = VectorAddition(v, u);
 		var text = "v = ["+v[x]+", "+v[y]+", "+v[z]+"], u = ["+u[x]+", "+u[y]+", "+u[z]+"], v+u = [ " +vecAddition[0]+
 			", " +vecAddition[1]+ ", "+vecAddition[2]+ "]";
