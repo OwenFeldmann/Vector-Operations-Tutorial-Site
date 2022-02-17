@@ -2,7 +2,7 @@
  * @author Gabe Webb <gwebb@unca.edu>
  * @author Owen Feldmann <ofeldman@unca.edu>
  * Assignment 2: Vector Operations Tutorial Site: Cross Product
- * Last Modified: 2/11/2022
+ * Last Modified: 2/15/2022
  */
 
 var canvas;
