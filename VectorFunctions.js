@@ -15,7 +15,7 @@
  */
 function VectorAddition(v1, v2)
 {
-	var result = new [null, null, null];
+	var result = [null, null, null];
 	for(var i = 0; i < 3; i++)
 	{
 		result[i] = v1[i] + v2[i];
